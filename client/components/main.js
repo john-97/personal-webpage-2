@@ -1,14 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom' // react-router v4/v5
-import ReduxExample from './example/example'
-import Todo from './example/example-page-two'
+import Landing from './landing'
 
 const Main = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/" component={ReduxExample} />
-        <Route exact path="/todo" component={Todo} />
+        <Route exact path="/" component={Landing} />
       </Switch>
     </div>
   )
