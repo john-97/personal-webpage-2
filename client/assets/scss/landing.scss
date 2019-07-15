@@ -1,0 +1,12 @@
+.landing-page{
+  .landing-page-body{
+    padding: $header-height 0 0 0;
+    .landing-page-body-welcome{
+      min-height: calc(100vh - #{$header-height});
+      background: url('../images/welcome-bg.jpg');
+      background-size: 150% 100%;
+      background-position-x: 25%;
+      opacity: 0.1;
+    }
+  }
+}
