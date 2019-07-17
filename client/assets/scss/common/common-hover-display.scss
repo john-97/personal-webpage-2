@@ -1,0 +1,58 @@
+.common-hover-display{
+  font-size: 1rem;
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 1em;
+  box-shadow: 0 0 10px 4px white;
+  margin: 0 auto;
+  overflow: hidden;
+  .common-hover-display-showpage{
+    background: $color-grey;
+    background-size: 100% auto;
+    background-position-y: center;
+    .common-hover-display-showpage-overlay{
+      background: rgba(black, 0.7);
+      text-align: center;
+      padding: 10em 0;
+      z-index: 2;
+      &.small-overlay{
+        padding: 1em;
+      }
+      .common-hover-display-showpage-overlay-title{
+        font-size: 2em;
+      }
+      .common-hover-display-showpage-overlay-open{
+        background: $color-blue;
+        display: block;
+        text-align: center !important;
+        margin-top: 1em;
+        padding: 0.4em 2em;
+        font-size: 1.5em;
+      }
+      .common-hover-display-showpage-overlay-left{
+        width: 40%;
+        .common-hover-display-showpage-overlay-left-title{
+          font-size: 1.5em;
+          margin: 1em 0;
+        }
+        .common-hover-display-showpage-overlay-left-image{
+          width: 90%;
+          margin: 2em auto;
+        }
+      }
+      .common-hover-display-showpage-overlay-right{
+        width: 60%;
+        text-align: left;
+        .common-hover-display-showpage-overlay-right-description{
+          .common-hover-display-showpage-overlay-right-description-title{
+            font-size: 1.5em;
+            margin: 0.5em 0;
+          }
+          .common-hover-display-showpage-overlay-right-description-text{
+
+          }
+        }
+      }
+    }
+  }
+}

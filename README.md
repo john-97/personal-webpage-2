@@ -1,4 +1,4 @@
-# personal-webpage-2
+# Jonathan's Website
 
 ### Npm Scripts
 * npm run dev (dev server on 0.0.0.0:8080)

@@ -10,6 +10,17 @@
         height: 20vw;
         background: url('../images/logo/longlogo-transparent.png');
         background-size: 100% 100%;
+        @media screen and (max-width: map-get($grid-breakpoints, md)){
+          background: url('../images/logo/logo-transparent.png');
+          background-size: 100% 100%;
+          width: 70vw;
+          height: 70vw;
+          margin: 0 auto;
+        }
+        @media screen and (max-width: map-get($grid-breakpoints, sm)){
+          width: 90vw;
+          height: 90vw;
+        }
       }
       .landing-page-body-welcome-body-links{
         position: absolute;
