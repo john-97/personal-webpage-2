@@ -1,27 +1,40 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { historyPush } from '../../redux/reducers/main'
 
-const Header = () => {
+const Header = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false)
 
   const generateMobileMenu = () => { // eslint-disable-line consistent-return
     if (mobileMenu) {
       return (
         <div className="common-header-mobileMenu">
-          <Link
-            to="/"
+          <div
             className="common-header-mobileMenu-item"
-            onClick={() => { setMobileMenu(false) }}
+            onClick={() => {
+              props.historyPush('/')
+              setMobileMenu(false)
+            }}
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
           >
             HOME
-          </Link>
-          <Link
-            to="/todo"
+          </div>
+          <div
             className="common-header-mobileMenu-item"
-            onClick={() => { setMobileMenu(false) }}
+            onClick={() => {
+              props.historyPush('/')
+              setMobileMenu(false)
+            }}
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
           >
-            Todo
-          </Link>
+            HOME
+          </div>
         </div>
       )
     }
@@ -30,21 +43,33 @@ const Header = () => {
   return (
     <div className="common-header">
       <div className="common-header-centering">
-        <div className="common-header-icon icon-globe" />
+        <div
+          className="common-header-icon"
+          onClick={() => props.historyPush('/')}
+          onKeyDown={() => {}}
+          tabIndex={0}
+          role="button"
+        />
         {/* desktop links lg/xl breakpoints */}
         <div className="common-header-links">
-          <Link
-            to="/"
+          <div
             className="common-header-links-item"
+            onClick={() => props.historyPush('/')}
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
           >
-            HOME
-          </Link>
-          <Link
-            to="/todo"
+            Home
+          </div>
+          <div
             className="common-header-links-item"
+            onClick={() => props.historyPush('/contact')}
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
           >
-            TODO
-          </Link>
+            Contact
+          </div>
         </div>
         {/* mobile links xs/sm/md breakpoints */}
         <div
@@ -61,4 +86,9 @@ const Header = () => {
   )
 }
 
-export default Header
+Header.propTypes = {
+  historyPush: PropTypes.func.isRequired
+}
+const mapStateToProps = () => ({})
+const mapDispatchToProps = dispatch => bindActionCreators({ historyPush }, dispatch)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)
