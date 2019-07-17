@@ -4,6 +4,7 @@
   width: 100vw;
   height: $header-height;
   background: $color-grey;
+  z-index: 10;
   .common-header-centering{
     width: 80%;
     height: 100%;
@@ -13,10 +14,9 @@
     justify-content: space-between;
     .common-header-icon{
       height: 100%;
-      font-size: 1.6em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      width: 180px;
+      background: url('../images/logo/longlogo-transparent.png');
+      background-size: 100% 100%;
     }
     .common-header-links{
       width: 30%;
@@ -28,17 +28,15 @@
         display: none;
       }
       .common-header-links-item{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-decoration: none;
+        align-self: center;
+      }
+      .common-header-links-item:hover{
+        color: $color-blue;
       }
     }
     .common-header-mobilelinks{
       font-size: 1.6em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-self: center;
       @media screen and (min-width: map-get($grid-breakpoints, lg)) {
         display: none;
       }
@@ -55,12 +53,16 @@
     .common-header-mobileMenu-item{
       height: 50px;
       width: 100%;
-      display: block;
-      background: white;
-      text-decoration: none;
+      background: $color-grey;
+      text-align: center;
+      // VERTICAL ALIGN
       display: flex;
       flex-direction: column;
       justify-content: center;
+    }
+    .common-header-mobileMenu-item:hover{
+      background: $color-grey2;
+      color: $color-blue;
     }
   }
 }

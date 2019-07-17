@@ -4,10 +4,11 @@ $font-quicksand: 'Quicksand', sans-serif;
 $font-roboto: 'Roboto Condensed', sans-serif;
 
 // Color
-$color-blue: #4ABDAC; // Main Color
+$color-blue: rgb(8, 157, 177); // Main Color
 $color-orange: #FC4A1A; // Highlights
 $color-yellow: #F7B733; // Buttons
-$color-grey: #DFDCE3; // Words
+$color-grey: #333333; // Words
+$color-grey2: #4e4e4e; // Words
 
 // Media Breakpoints
 $grid-breakpoints: (
@@ -19,5 +20,5 @@ $grid-breakpoints: (
 ) !default;
 
 // Dimensions
-$header-height: 60px;
+$header-height: 50px;
 $footer-height: 200px;

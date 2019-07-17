@@ -1,12 +1,36 @@
 .landing-page{
   .landing-page-body{
-    padding: $header-height 0 0 0;
+    padding-top: $header-height;
     .landing-page-body-welcome{
       min-height: calc(100vh - #{$header-height});
-      background: url('../images/welcome-bg.jpg');
-      background-size: 150% 100%;
-      background-position-x: 25%;
-      opacity: 0.1;
+      position: relative;
+      .landing-page-body-welcome-body-logo{
+        margin: 10% auto;
+        width: 70vw;
+        height: 20vw;
+        background: url('../images/logo/longlogo-transparent.png');
+        background-size: 100% 100%;
+      }
+      .landing-page-body-welcome-body-links{
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .landing-page-body-welcome-body-links-link{
+          display: inline-block;
+          margin: 0.4em auto;
+          background: $color-blue;
+          font-size: 1.3rem;
+          font-weight: 900;
+          padding: 0.7em 2em;
+        }
+        .landing-page-body-welcome-body-links-arrow{
+          margin: 1em 1em 0 0;
+          font-size: 3rem;
+          text-align: right;
+        }
+      }
     }
   }
 }
