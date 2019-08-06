@@ -1,4 +1,10 @@
 .landing-page{
+  color: white;
+  background: black;
+  &.light{
+    color: black;
+    background: white;
+  }
   .landing-page-body{
     padding-top: $header-height;
     .landing-page-body-welcome{

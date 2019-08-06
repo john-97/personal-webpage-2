@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { historyPush } from '../../redux/reducers/main'
+import { historyPush, toggleDarkMode } from '../../redux/reducers/main'
 
 const Header = (props) => {
   const [mobileMenu, setMobileMenu] = useState(false)
@@ -70,6 +70,15 @@ const Header = (props) => {
           >
             Contact
           </div>
+          <div
+            className="common-header-links-item"
+            onClick={() => props.toggleDarkMode()}
+            onKeyDown={() => {}}
+            tabIndex={0}
+            role="button"
+          >
+            {props.main.darkmode ? 'Dark mode' : 'Light mode'}
+          </div>
         </div>
         {/* mobile links xs/sm/md breakpoints */}
         <div
@@ -87,8 +96,10 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-  historyPush: PropTypes.func.isRequired
+  historyPush: PropTypes.func.isRequired,
+  toggleDarkMode: PropTypes.func.isRequired,
+  main: PropTypes.shape({ darkmode: PropTypes.bool }).isRequired
 }
-const mapStateToProps = () => ({})
-const mapDispatchToProps = dispatch => bindActionCreators({ historyPush }, dispatch)
+const mapStateToProps = state => ({ main: state.main })
+const mapDispatchToProps = dispatch => bindActionCreators({ historyPush, toggleDarkMode }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Header)
